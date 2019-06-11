@@ -1,0 +1,61 @@
+websites:
+  - name: makemytrip
+    enabled: false
+    data:
+      request:
+        url: https://bus.makemytrip.com/bus/search/$1/$2/$3
+        type: interpolate
+        args:
+          from: 1
+          to: 2
+          date: 3
+        date_format: "%d-%m-%Y"
+      result:
+        format: document
+        buses:
+          xpath: "/html/body/div[2]/div/div/div[2]/div[2]/div[3]/div/div[2]/div"
+          offset: 1
+        departure_time: 
+          xpath: "/div/div/div[1]/span[1]"
+        arrival_time:
+          xpath: "/div/div/div[1]/span[3]"
+        company:
+          xpath: "/div/div/div[2]/p/span[1]"
+        bus_type:
+          xpath: "div/div/div[2]/p/span[2]"
+        rating:
+          xpath: "div/div/div[2]/ul[2]/p/span/span"
+        fare:
+          xpath: "/html/body/div[2]/div/div/div[2]/div[2]/div[3]/div/div[2]/div[41]/div/div/div[3]/div/div/span[2]"
+          xpath2: "/html/body/div[2]/div/div/div[2]/div[2]/div[3]/div/div[2]/div[40]/div/div/div[3]/div/span"
+        seats: 21
+  - name: ibibo
+    enabled: true
+    data:
+      request:
+        url: http://developer.goibibo.com/api/bus/search/
+        type: get
+        from: source
+        to: destination
+        date: dateofdeparture
+        date_format: "%Y%m%d"
+        params:
+          - name: app_id
+            value: "secrets.ibibo.api.app_id"
+          - name: app_key
+            value: "secrets.ibibo.api.app_key"
+          - name: format
+            value: json
+      result:
+        format: json
+        buses: data.onwardflights
+        seats: avlWindowSeats
+        departure_time: DepartureTime
+        arrival_time: ArrivalTime
+        fare: fare.totalfare
+        bus_type: BusType
+        company: TravelsName
+        rating: rating
+
+
+
