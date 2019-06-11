@@ -6,5 +6,9 @@ defmodule Yamerl_init do
     :application.start(:yamerl)
 
     [sites_info | _] = :yamerl_constr.file(yaml_path)
+    sites_info = Enum.into(sites_info , %{})  # updating sites_info list to map
+    websites = sites_info['websites']
+    websites
+#    IO.inspect(web)
   end
 end

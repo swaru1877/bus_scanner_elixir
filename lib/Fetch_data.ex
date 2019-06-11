@@ -1,4 +1,5 @@
 defmodule Fetch_data do
+	sites = Yamerl_init.func
 	def intialize_sites do
 		IO.puts "In intialiaze sites module"
 	end
