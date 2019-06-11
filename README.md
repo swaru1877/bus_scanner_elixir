@@ -1,21 +1,16 @@
-# BusScannerElixir
+A bus price comparator like Sky Scanner but for buses.
 
-**TODO: Add description**
+### Scan from websites like - 
+  * redbus.in
+  * mobikwik.com
+  * paytm.com
+  * goibibo.com
+  * makemytrip.com
+  * TSRTC
+  * Abhibus
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `bus_scanner_elixir` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:bus_scanner_elixir, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/bus_scanner_elixir](https://hexdocs.pm/bus_scanner_elixir).
+### Tasklist:
+- [ ] Take command line input for from, to, and date
+- [ ] Write scanner for redbus.in
+- [ ] Extend to mobikwik.com
 

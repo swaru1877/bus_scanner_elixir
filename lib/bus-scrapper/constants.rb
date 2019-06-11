@@ -1,0 +1,5 @@
+INTERPOLATE = 'interpolate'
+HTTP = 'http'
+GET = 'get'
+POST = 'post'
+SECRETS_RESOLVER = 'secrets.'

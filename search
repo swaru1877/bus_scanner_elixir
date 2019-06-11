@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require_relative 'lib/bus-scrapper'
+
+data = search('Bangalore', 'Hyderabad', Time.new('2019', '7', '5'))
+puts JSON.pretty_generate data
